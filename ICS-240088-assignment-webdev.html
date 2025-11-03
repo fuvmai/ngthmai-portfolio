@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: Garamond;
+      margin: 0;
+      padding: 0;
+      background-color: #F7EFE5;
+      color: #674188;
+    }
+    header {
+  background-color: #E2BFD9;
+  color: #674188;
+  text-align: left;          /* left-align text */
+  padding: 2em;
+  display: flex;             /* arrange image + text side by side */
+  align-items: center;       /* vertically center them */
+  justify-content: center;   /* horizontally center them */
+  gap: 30px;                 /* space between image and text */
+}
+header img {
+  width: 200px;              /* larger image */
+  height: 250px;             /* rectangular shape */
+  border-radius: 15px;       /* slightly rounded corners */
+  object-fit: cover;         /* keeps photo ratio nicely cropped */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional shadow for style */
+}
+header div {
+  max-width: 600px;          /* limit text width */
+}
+    section {
+      background-color: #E2BFD9;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    img {
+      width: 150px;
+      border-radius: 50%;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #F7EFE5;
+      color: #674188;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1: HEADER -->
+  <header>
+  <img src="E:\FUV\ICS-240088-assignment-webdev\IMG_4797.JPG" alt="Nguyen Thanh Mai">
+  <div>
+    <h1>Nguyen Thanh Mai</h1>
+    <p>Hello! I’m a sophomore at Fulbright University Vietnam and the vice president of Fulbright Badminton Club. I like being called by my nickname — mai mit meo.</p>
+  </div>
+</header>
+
+  <!-- SECTION 2: About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m currently studying Social Studies. I love to explore about the micro-sociology where I could learn how people construct meaning, identity, and relationships in everyday interactions. Besides, for extracurricular activities, I am very fond of organizing sport events. I have been enjoying working in the media and event for the Fulbright badminton club.</p>
+    <ul>
+      <li><strong>Education:</strong> Fulbright University Vietnam</li>
+      <li><strong>Skills:</strong> Research, analytical thinking, communication, event organization</li>
+      <li><strong>Hobbies:</strong> Badminton, crochet, caring for others</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 3: PORTFOLIO -->
+  <section id="portfolio">
+    <h2>My Projects</h2>
+    <p>Here are a few things I’ve worked on:</p>
+    <ul>
+      <li><a href="https://www.facebook.com/share/r/17mRAD37Vu/">Organizing Tryout Day 2025 and creating contents for the club's social media </a></li>
+      <li>Analytical essay on the media representation of body hair in Vietnam</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 4: CONTACT -->
+  <section id="contact">
+    <h2>You can "alo" me here</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" rows="4" cols="40"></textarea><br><br>
+
+      <button type="button">Send</button>
+    </form>
+    <p>Or reach me at: <a href="mailto:mai.nguyen.240088@student.fulbright.edu.vn">mai.nguyen.240088@student.fulbright.edu.vn</a></p>
+  </section>
+
+  <!-- SECTION 5: NOTEBOOK -->
+  <section id="notebook">
+    <h2>Tell me</h2>
+    <textarea id="noteInput" placeholder="What's on your mind?"></textarea><br>
+    <button id="addNoteBtn">Add Note</button>
+    <div id="notesDisplay"></div>
+  </section>
+
+  <footer>
+    <p>Thanks for stopping by!</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const input = document.getElementById('noteInput');
+    const btn = document.getElementById('addNoteBtn');
+    const display = document.getElementById('notesDisplay');
+
+    btn.addEventListener('click', function() {
+      const text = input.value.trim();
+      if (text === '') {
+        alert('Please type your note before adding!');
+        return;
+      }
+      const note = document.createElement('p');
+      note.textContent = text;
+      display.appendChild(note);
+      input.value = ''; // clear input
+    });
+  </script>
+</body>
+</html>
